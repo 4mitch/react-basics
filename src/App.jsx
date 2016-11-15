@@ -11,4 +11,9 @@ const app = (
     </div>
 );
 
-ReactDOM.render(app, document.getElementById('root'));
+console.log(title);
+console.log(subtitle);
+console.log(container);
+
+const dom = ReactDOM.render(app, document.getElementById('root'));
+console.log(dom);
