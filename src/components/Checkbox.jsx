@@ -1,21 +1,27 @@
 import React from 'react';
 
-class Checkbox extends React.Component {
-    constructor(props) {
-        super(props);
+const Checkbox = React.createClass({
+    propTypes: {
+        initiallyChecked: React.PropTypes.bool.isRequired
+    },
 
-        this.state = {
+    getDefaultProps() {
+        return {
+            initiallyChecked: false
+        };
+    },
+
+    getInitialState() {
+        return {
             checked: this.props.initiallyChecked
         };
-
-        this.handleClick = this.handleClick.bind(this);
-    }
+    },
 
     handleClick(event) {
         this.setState({
             checked: !this.state.checked
         });
-    }
+    },
 
     render() {
         return (
@@ -24,7 +30,7 @@ class Checkbox extends React.Component {
             </button>
         );
     }
-}
+});
 
 Checkbox.propTypes = {
     initiallyChecked: React.PropTypes.bool.isRequired
